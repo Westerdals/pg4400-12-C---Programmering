@@ -15,30 +15,30 @@ Calculator::Calculator()
 }
 
 /* Adds two integers */
-int Calculator::add(int a, int b)
+int Calculator::add(Pair p)
 {
-	m_result = a + b;
+	m_result = p.a + p.b;
 	return m_result;
 }
 
 /* Subtracts two integers */
-int Calculator::sub(int a, int b)
+int Calculator::sub(Pair p)
 {
-	m_result = a - b;
+	m_result = p.a - p.b;
 	return m_result;
 }
 
 /* Divides two integers */
-int Calculator::div(int a, int b)
+int Calculator::div(Pair p)
 {
-	m_result = a / b;
+	m_result = p.a / p.b;
 	return m_result;
 }
 
 /* Multiplies two integers */
-int Calculator::mul(int a, int b)
+int Calculator::mul(Pair p)
 {
-	m_result = a * b;
+	m_result = p.a * p.b;
 	return m_result;
 }
 

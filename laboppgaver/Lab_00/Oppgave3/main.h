@@ -16,9 +16,10 @@
 Calculator calc;
 
 /** USER ACTIONS */
-enum ACTIONS
+enum USER_ACTION
 {
-	ADD_ACTION = 1,
+	NOT_SET,
+	ADD_ACTION,
 	SUBTRACT_ACTION,
 	DIVIDE_ACTION,
 	MULTIPLY_ACTION,
@@ -29,9 +30,9 @@ enum ACTIONS
 /** PROTOTYPES - helper functions */
 
 /* Retrieves an action from the user & validates it */
-void getUserAction(int *action);
+USER_ACTION getUserAction();
 
 /* Retrieves the numbers to perform calculations */
-void getNumbers(int *a, int *b);
+Pair getNumbers();
 
 #endif

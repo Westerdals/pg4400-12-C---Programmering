@@ -21,63 +21,65 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 	// Declare variables
-	int action, a, b;
+	USER_ACTION action;
+	Pair numbers;
+	bool exit = false;
 	
 	// Print the name of the program
 	cout << "Stigulator v1.0.0" << endl << endl;
 	
 	// Program should run until user demands an exit
-	while (true)
+	while (!exit)
 	{
 		// Retrieve action from user
-		getUserAction(&action);
+		action = getUserAction();
 
-		// Exit if user picked the exit action
-		if (action == EXIT_ACTION)
+		// Retrieve numbers if an appropriate action is selected
+		if ((EXIT_ACTION != action) && (CLEAR_ACTION != action))
 		{
-			cout << "Bye, bye ..." << endl;
-			break; // Break the loop
+			// Retrieve the numbers from user
+			numbers = getNumbers();
+
+			// Check the action, perform the proper operation, print result
+			cout << "Result: ";
 		}
 
-		// Clear result if asked
-		if (action == CLEAR_ACTION)
-		{
-			calc.clear();
-			cout << "Number cleared ..." << endl << endl;
-			continue; // Skip the rest of the loop
-		}
-
-		// Retrieve the numbers from user
-		getNumbers(&a, &b);
-
-		// Validate the input, dividing by zero leads to a crash!
-		if ((action == DIVIDE_ACTION) && (b == 0))
-		{
-			cout << "Can't divide by zero ..." << endl << endl;
-			continue;
-		}
-
-		// Check the action, perform the proper operation, print result
-		cout << "Result: ";
-
+		// Perform the proper action
 		switch (action)
 		{
 		case ADD_ACTION: // Addition
-			calc.add(a, b);
-			cout << a << " + " << b;
+			calc.add(numbers);
+			cout << numbers.a << " + " << numbers.b;
 			break;
 		case SUBTRACT_ACTION: // Subtraction
-			calc.sub(a, b);
-			cout << a << " - " << b;
+			calc.sub(numbers);
+			cout << numbers.a << " - " << numbers.b;
 			break;
 		case DIVIDE_ACTION: // Division
-			calc.div(a, b);
-			cout << a << " / " << b;
+			// Validate input, dividing by zero will crash the program
+			if (0 < numbers.b)
+			{
+				calc.div(numbers);
+				cout << numbers.a << " / " << numbers.b;
+			}
+			else
+			{
+				cout << "Can't divide by zero ..." << endl << endl;
+			}
+			
 			break;
 		case MULTIPLY_ACTION: // Multiplication
-			calc.mul(a, b);
-			cout << a << " * " << b;
+			calc.mul(numbers);
+			cout << numbers.a << " * " << numbers.b;
 			break;
+		case CLEAR_ACTION: // Clear number
+			calc.clear();
+			cout << "Number cleared ..." << endl << endl;
+			break;
+		case EXIT_ACTION: // Exit program
+			exit = true;
+			cout << "Bye, bye ..." << endl;
+			break; // Skip the rest of the loop
 		}
 
 		// Print final result
@@ -94,48 +96,59 @@ int main(int argc, char *argv[])
 /** Helper functions */
 
 /* Retrieves an action from the user & validates it */
-void getUserAction(int *action)
+USER_ACTION getUserAction()
 {
-	// Reset the action to an "invalid" state
-	*action = 0;
+	// Set the action to an "invalid" state
+	USER_ACTION action = NOT_SET;
 
 	// Ask for an action while "invalid"
-	while ((ADD_ACTION > *action) || (*action > EXIT_ACTION))
+	while (NOT_SET == action)
 	{
 		// Output the action options
 		cout << "Enter an action\n 1 - addition | 2 - subtraction | " <<
 		"3 - division\n 4 - multiplication |  5 - clear result | 6 - exit\n: ";
 			
 		// Retrieve user input
-		cin >> *action;
+		int actionIn;
+		cin >> actionIn;
 
 		// Validate input
-		if ((ADD_ACTION > *action) || (*action > EXIT_ACTION))
+		if ((ADD_ACTION > actionIn) || (actionIn > EXIT_ACTION))
 		{
-			cout << "Invalid action..." << *action << endl << endl;
+			cout << "Invalid action..." << actionIn << endl << endl;
+		}
+		else
+		{
+			action = static_cast<USER_ACTION>(actionIn);
 		}
 	}
+
+	return action;
 }
 
 /* Retrieves the numbers to perform calculations */
-void getNumbers(int *a, int *b)
+Pair getNumbers()
 {
+	Pair result;
+
 	// Retrieve the numbers from user
 	if (calc.getResult() > 0)
 	{
-		*a = calc.getResult(); // Set a if we already have a result
+		result.a = calc.getResult(); // Set a if we already have a result
 		cout << endl;
 	}
 	else
 	{
 		// Retrieve the first number of the calculation
 		cout << endl << "Enter the first number: ";
-		cin >> *a; // User input
-		cout << "You entered: " << *a << endl << endl;
+		cin >> result.a; // User input
+		cout << "You entered: " << result.a << endl << endl;
 	}
 		
 	// Retrieve the second number of the calculation
 	cout << "Enter the second number: ";
-	cin >> *b; // User input
-	cout << "You entered: " << *b << endl << endl;
+	cin >> result.b; // User input
+	cout << "You entered: " << result.b << endl << endl;
+
+	return result;
 }

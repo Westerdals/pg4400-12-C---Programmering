@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="Pair.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Calculator.cpp" />

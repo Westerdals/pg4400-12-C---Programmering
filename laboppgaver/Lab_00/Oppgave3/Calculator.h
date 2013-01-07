@@ -9,6 +9,8 @@
 #ifndef CALC_H // Inclusion guard
 #define CALC_H
 
+#include "Pair.h"
+
 class Calculator
 {
 public:
@@ -16,16 +18,16 @@ public:
 	Calculator();
 
 	/* Adds two integers */
-	int add(int a, int b);
+	int add(Pair p);
 
 	/* Subtracts two integers */
-	int sub(int a, int b);
+	int sub(Pair p);
 
 	/* Divides two integers */
-	int div(int a, int b);
+	int div(Pair p);
 
 	/* Multiplies two integers */
-	int mul(int a, int b);
+	int mul(Pair p);
 
 	/* Clears the result */
 	void clear();
