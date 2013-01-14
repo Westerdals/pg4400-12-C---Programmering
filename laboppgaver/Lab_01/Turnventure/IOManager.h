@@ -11,6 +11,7 @@ public:
 	void printText(const std::string&);
 	void printText(const std::stringstream&);
 	void newLine();
+	void printSeparator();
 
 	char getChar();
 	int getNumber();

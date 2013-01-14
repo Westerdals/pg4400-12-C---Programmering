@@ -28,6 +28,11 @@ void IOManager::newLine()
 	cout << endl;
 }
 
+void IOManager::printSeparator()
+{
+	cout << "\n----------------\n";
+}
+
 char IOManager::getChar()
 {
 	char a;
@@ -47,7 +52,11 @@ int IOManager::getNumber()
 string IOManager::getName()
 {
 	string name;
-	getline(cin, name);
 
+	// Flush cin, or it will skip getline!
+	cin.clear();
+	cin.sync();
+
+	getline(cin, name, '\n');
 	return name;
 }
