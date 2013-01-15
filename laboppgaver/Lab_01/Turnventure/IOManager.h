@@ -16,6 +16,8 @@ public:
 	char getChar();
 	int getNumber();
 	std::string getName();
+private:
+	void clearCin();
 };
 
 #endif

@@ -19,8 +19,8 @@ public:
 	void run();
 
 	enum {
-		MIN_NUM_PLAYERS = 2,
-		MAX_NUM_PLAYERS = 6
+		e_minPlayers = 2,
+		e_maxPlayers = 6
 	};
 private:
 	GameObject();								// Hidden constructor

@@ -22,7 +22,6 @@ void IOManager::printText(const stringstream& s)
 	cout << s.str();
 }
 
-
 void IOManager::newLine()
 {
 	cout << endl;
@@ -37,26 +36,54 @@ char IOManager::getChar()
 {
 	char a;
 	cin >> a;
-
-	return a;
+	
+	if (!cin.fail())
+	{
+		cin.ignore();
+		return a;
+	}
+	else
+	{
+		clearCin();
+		return ' ';
+	}
 }
 
 int IOManager::getNumber()
 {
 	int a;
 	cin >> a;
-
-	return a;
+	
+	if (!cin.fail())
+	{
+		cin.ignore();
+		return a;
+	}
+	else
+	{
+		clearCin();
+		return -1;
+	}
 }
 
 string IOManager::getName()
 {
 	string name;
+	getline(cin, name);
+	
+	if (!cin.fail())
+	{
+		return name;
+	}
+	else
+	{
+		clearCin();
+		return "";
+	}
+}
 
-	// Flush cin, or it will skip getline!
+void IOManager::clearCin()
+{
 	cin.clear();
-	cin.sync();
-
-	getline(cin, name, '\n');
-	return name;
+	cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 }
