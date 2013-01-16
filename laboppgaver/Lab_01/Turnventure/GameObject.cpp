@@ -1,19 +1,32 @@
+/**
+ * @file: GameObject.cpp
+ * @author: Stig M. Halvorsen <halsti@nith.no>
+ * 
+ * @description: A singleton class to control all Gameplay
+ */
 #include <memory>
 #include "GameObject.h"
 #include "GameAction.h"
 
-GameObject::GameObject()
-{
-}
-
+/* Starts the game loop and all game logic */
 void GameObject::run()
 {
-	bool gameOver = false;
+	m_gameOver = false;
 
+	// Print game name
 	m_ioMan.printText("Turnventure v1.0");
 	m_ioMan.printSeparator();
 
-	while (!gameOver)
+	//while (!m_gameOver)
+	//{
+		// getPlayers();
+		// playGame();
+		// rematch();
+	//}
+
+	// get
+
+	while (!m_gameOver)
 	{
 		int numPlayers = 0;
 		int round = 1;
@@ -248,11 +261,16 @@ void GameObject::run()
 
 		if ((playAgain == 'N') || (playAgain == 'n'))
 		{
-			gameOver = true;
+			m_gameOver = true;
 		}
 		else
 		{
 			m_ioMan.printSeparator();
 		}
 	}
+}
+
+/* Empty private constructor */
+GameObject::GameObject()
+{
 }
