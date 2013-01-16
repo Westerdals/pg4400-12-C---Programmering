@@ -13,6 +13,7 @@
 
 #include "IOManager.h"
 #include "Player.h"
+#include "GameAction.h"
 
 class GameObject
 {
@@ -37,14 +38,33 @@ private:
 	GameObject(const GameObject&);			  // Hidden copy constructor
 	GameObject& operator=(const GameObject&); // Hidden assign operator
 
+	/* Asks player for the amount of players */
+	void getPlayers();
+
+	/* Asks player for names and game classes (Wizard, etc.) */
+	void getPlayerData();
+
+	/* Function performing the actual game logic, controls the rounds and gameplay */
+	void playGame();
+
+	/* Retrieves the selected user actions from all users, stores result in given vector */
+	void getPlayerActions();
+
+	/* Performs the actions in the list of the active game round's actions (m_roundActions) */
+	void performPlayerActions();
+
+	/* Queries the user for a new game or exit */
+	void rematch();
+
 	// Object for controlling input & output
 	IOManager m_ioMan;
 
 	// List of players. NOTE: stored in unique_ptr
 	std::vector<std::unique_ptr<Player>> m_players;
 
-	// Whether or not the game is over
-	bool m_gameOver;
+	bool m_gameOver;						// Whether or not the game is over
+	int m_numPlayers;						// Number of players
+	std::vector<GameAction> m_roundActions; // List of one round's actions
 };
 
 #endif
