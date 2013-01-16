@@ -2,12 +2,13 @@
 
 /**
  * NB: THIS IS UNDER DEVELOPMENT
- * It is in fact far from done, uploaded to git
- * for version control. Final version will come soon!
+ * Currently only missing some good old clean-up.
+ * Uploaded to git for version control.
+ * Cleaned version will come soon!
  *
  * Code is messy; no good example ;)
  *
- * @version: 0.0.3
+ * @version: 0.0.4
  * @author: Stig M. Halvorsen <halsti@nith.no>
  */
 

@@ -1,5 +1,6 @@
 #include <memory>
 #include "GameObject.h"
+#include "GameAction.h"
 
 GameObject::GameObject()
 {
@@ -116,9 +117,142 @@ void GameObject::run()
 
 			out << std::endl << "Actions:\n\t1 - Attack\n\t2 - Dodge\n\n";
 			m_ioMan.printText(out);
-			break; // Temporary!
+			out.str(std::string()); // Clear stringstream
+
+			int currentPlayer = 0;
+			std::vector<GameAction> roundActions;
+
+			for (auto it = m_players.begin(); it != m_players.end(); ++it)
+			{
+				GameAction action;
+				action.m_caller = (*it).get();
+				action.m_action = e_noAction;
+
+				out << (*it)->getName() << ", pick an action: ";
+				m_ioMan.printText(out);
+				out.str(std::string()); // Clear stringstream
+
+				while (e_noAction == action.m_action)
+				{
+					int givenAction = m_ioMan.getNumber();
+
+					if ((givenAction < e_attack) || (givenAction > e_dodge))
+					{
+						m_ioMan.printText("Invalid action ...\n");
+					}
+					else
+					{
+						action.m_action = static_cast<e_Action>(givenAction);
+					}
+				}
+
+				if (e_attack == action.m_action)
+				{
+					std::stringstream targets;
+					targets << "Targets:\n";
+
+					for (auto target = m_players.begin(); target != m_players.end(); ++target)
+					{
+						if (target != it)
+						{
+							targets << "\t" << ((target - m_players.begin()) + 1) << " - " << (*target)->getName() << std::endl;
+						}
+					}
+
+					m_ioMan.printText(targets);
+
+					int targetIndex = -1;
+
+					while (0 > targetIndex)
+					{
+						m_ioMan.printText("Pick a target: ");
+						targetIndex = m_ioMan.getNumber();
+
+						if (((1 > targetIndex) || (targetIndex > static_cast<int>(m_players.size())) || ((targetIndex - 1) == currentPlayer)))
+						{
+							m_ioMan.printText("Invalid target ...\n");
+							targetIndex = -1;
+						}
+					}
+					m_ioMan.printText("\n");
+					action.m_target = m_players[targetIndex - 1].get();
+				}
+
+				if (e_dodge == action.m_action)
+				{
+					(*it)->setDodge();
+				}
+
+				roundActions.push_back(action);
+				++currentPlayer;
+			}
+
+			for (auto action = roundActions.begin(); action != roundActions.end(); ++action)
+			{
+				if (action->m_action == e_attack)
+				{
+					std::stringstream message;
+					message << action->m_caller->getName() << " attacked " << action->m_target->getName();
+					
+					if (action->m_target->dodge())
+					{
+						message << " but failed.\n";
+						message << action->m_target->getName() << " dodged an attack.";
+					}
+					else
+					{
+						action->m_target->attack(action->m_caller->getClass()->m_damagePoints);
+						message << " for " << action->m_caller->getClass()->m_damagePoints << " damage.";
+					}
+
+					message << std::endl;
+					m_ioMan.printText(message);
+				}
+			}
+
+			// Remove dead players
+			for (auto it = m_players.begin(); it != m_players.end();)
+			{
+				(*it)->setDodge(0);
+				if ((*it)->isDead())
+				{
+					std::stringstream message;
+					message << (*it)->getName() << " was killed (KIA)!\n";
+
+					it->reset();
+					it = m_players.erase(it);
+				}
+				else
+				{
+					++it;
+				}
+			}
+
+			m_ioMan.printSeparator();
+			++round;
 		}
 
-		gameOver = true;
+		if (m_players.size() > 0)
+		{
+			std::stringstream message;
+			message << m_players[0]->getName() << " WON!";
+			m_ioMan.printText(message);
+		}
+		else
+		{
+			m_ioMan.printText("The game ended up as a draw!");
+		}
+
+		m_ioMan.printText("\n\nGame Over, again [Y/n]: ");
+		char playAgain = m_ioMan.getChar();
+
+		if ((playAgain == 'N') || (playAgain == 'n'))
+		{
+			gameOver = true;
+		}
+		else
+		{
+			m_ioMan.printSeparator();
+		}
 	}
 }
