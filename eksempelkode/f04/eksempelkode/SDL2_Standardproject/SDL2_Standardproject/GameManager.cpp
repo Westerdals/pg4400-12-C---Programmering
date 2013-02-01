@@ -1,19 +1,55 @@
-#include <iostream>
 #include "GameManager.h"
 #include "GameObject.h"
+#include "InputManager.h"
 
 GameManager::GameManager()
 {
-	// Initialize stuff here
+	m_window = m_sdl.createWindow("My Awesome SDL 2.0 Game");
 }
 
 void GameManager::play()
 {
-	unsigned int mainWindow = m_sdl.createWindow("My Awesome SDL 2.0 Game");
-	GameObject background("sdl2.bmp", m_sdl.getRenderer(mainWindow));
+	bool notGameOver = true;
+	GameObject background("sdl2.bmp", m_sdl.getRenderer(m_window));
+	GameObject player("sdl_bro.bmp", m_sdl.getRenderer(m_window));
 
-	m_sdl.addObject(background, mainWindow);
-	m_sdl.renderWindow(mainWindow);
+	while (notGameOver)
+	{
+		InputManager::Instance().Update();
 
-	system("Pause");
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_ESCAPE))
+		{
+			notGameOver = false;
+		}
+
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_LEFT))
+		{
+			player.m_coords.x -= 5;
+		}
+		
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_RIGHT))
+		{
+			player.m_coords.x += 5;
+		}
+
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_UP))
+		{
+			player.m_coords.y -= 5;
+		}
+
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_DOWN))
+		{
+			player.m_coords.y += 5;
+		}
+
+		m_sdl.addObject(background, m_window);
+		m_sdl.addObject(player, m_window);
+		m_sdl.renderWindow(m_window);
+
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_ESCAPE) ||
+			SDL_HasEvent(SDL_QUIT))
+		{
+			notGameOver = false;
+		}
+	}
 }

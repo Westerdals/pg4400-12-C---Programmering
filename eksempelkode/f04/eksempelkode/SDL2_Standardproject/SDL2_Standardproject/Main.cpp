@@ -18,6 +18,12 @@ int main(int argc, char* argv[])
 		std::cerr << "An SDL error occured: "
 				  << err.what() << std::endl;
 	}
+	catch(const std::bad_alloc& err)
+	{
+		std::cerr << "Memory allocation failure: "
+				<< err.what() << std::endl;
+		return false;
+	}
 	catch(const std::exception& err)
 	{
 		std::cerr << "An error occured: "

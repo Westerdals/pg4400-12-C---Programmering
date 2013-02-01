@@ -1,6 +1,7 @@
 #ifndef SDL_MANAGER_H
 #define SDL_MANAGER_H
 
+#include <memory>
 #include <vector>
 #include <SDL.h>
 #include "SDLError.h"
@@ -29,7 +30,7 @@ public:
 	void renderWindow(const unsigned int& windowIndex);
 	void render();
 private:
-	std::vector<SDLWindow> m_windows;
+	std::vector<std::unique_ptr<SDLWindow>> m_windows;
 };
 
 #endif

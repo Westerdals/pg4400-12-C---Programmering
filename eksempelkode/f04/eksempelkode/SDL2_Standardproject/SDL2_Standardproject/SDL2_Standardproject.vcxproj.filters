@@ -40,6 +40,9 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDL\SDLError.h">
@@ -57,9 +60,15 @@
     <ClInclude Include="GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\gfx\sdl2.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="Assets\gfx\sdl_bro.bmp">
       <Filter>Resource Files\gfx</Filter>
     </Image>
   </ItemGroup>

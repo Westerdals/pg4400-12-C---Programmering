@@ -7,6 +7,11 @@ class SDLWindow
 {
 public:
 	SDLWindow() : m_window(NULL), m_renderer(NULL), m_open(false) {}
+	SDLWindow(SDL_Window* window, SDL_Renderer* renderer, const bool& open = false)
+		: m_window(window), m_renderer(renderer), m_open(open)
+	{
+	}
+
 	~SDLWindow()
 	{
 		if (m_open)

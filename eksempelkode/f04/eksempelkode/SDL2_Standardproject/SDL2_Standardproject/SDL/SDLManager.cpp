@@ -22,14 +22,12 @@ int SDLManager::createWindow(const std::string& title,
 					const int& x, const int& y,
 					const Uint32& flags)
 {
-	SDLWindow window;
-
 	// Create the window where we will draw.
-	window.m_window = SDL_CreateWindow(
+	SDL_Window* window = SDL_CreateWindow(
 		title.c_str(), x, y, width, height, flags
 	);
 	
-	if (window.m_window == NULL)
+	if (window == NULL)
 	{
 		std::stringstream msg;
 		msg << "Could not create window; \"" << title
@@ -39,12 +37,12 @@ int SDLManager::createWindow(const std::string& title,
 	}
 
 	// We must call SDL_CreateRenderer in order for draw calls to affect this window.
-	window.m_renderer = SDL_CreateRenderer(window.m_window, -1, SDL_RENDERER_ACCELERATED);
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
-	if (window.m_renderer == NULL)
+	if (renderer == NULL)
 	{
 		std::stringstream msg;
-		SDL_DestroyWindow(window.m_window);
+		SDL_DestroyWindow(window);
 
 		msg << "Could not create window renderer; \"" << title
 			<< "\", details: " << SDL_GetError();
@@ -53,19 +51,17 @@ int SDLManager::createWindow(const std::string& title,
 	}
 
 	// Select the color for drawing. It is set to black here.
-	SDL_SetRenderDrawColor(window.m_renderer, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
 	// Clear the entire screen to our selected color.
-	SDL_RenderClear(window.m_renderer);
+	SDL_RenderClear(renderer);
 
 	// Up until now everything was drawn behind the scenes.
     // This will show the new, red contents of the window.
    // SDL_RenderPresent(window.m_renderer);
 
 	int index = m_windows.size();
-	window.m_open = true;
-	// THIS DOESN'T WORK! REQUIRES DYNAMIC ALLOCATION! 
-	m_windows.push_back(window);
+	m_windows.push_back(std::unique_ptr<SDLWindow>(new SDLWindow(window, renderer, true)));//window);
 
 	renderWindow(index);
 
@@ -74,9 +70,9 @@ int SDLManager::createWindow(const std::string& title,
 
 void SDLManager::addObject(const GameObject& obj, const unsigned int& windowIndex)
 {
-	if ((m_windows.size() > windowIndex) && m_windows[windowIndex].m_open)
+	if ((m_windows.size() > windowIndex) && m_windows[windowIndex]->m_open)
 	{
-		SDL_RenderCopy(m_windows[windowIndex].m_renderer, obj.getDrawable(), &obj.m_coords, NULL);
+		SDL_RenderCopy(m_windows[windowIndex]->m_renderer, obj.getDrawable(), NULL, &obj.m_coords);
 	}
 }
 
@@ -84,7 +80,7 @@ SDL_Renderer* const SDLManager::getRenderer(const unsigned int& windowIndex) con
 {
 	if (m_windows.size() > windowIndex)
 	{
-		return m_windows[windowIndex].m_renderer;
+		return m_windows[windowIndex]->m_renderer;
 	}
 
 	return NULL;
@@ -94,17 +90,18 @@ void SDLManager::closeWindow(const unsigned int& windowIndex)
 {
 	if (m_windows.size() > windowIndex)
 	{
-		m_windows[windowIndex].m_open = false;
-		SDL_DestroyWindow(m_windows[windowIndex].m_window);
+		m_windows[windowIndex]->m_open = false;
+		SDL_DestroyRenderer(m_windows[windowIndex]->m_renderer);
+		SDL_DestroyWindow(m_windows[windowIndex]->m_window);
 	}
 }
 
 void SDLManager::renderWindow(const unsigned int& windowIndex)
 {
-	if ((m_windows.size() > windowIndex) && m_windows[windowIndex].m_open)
+	if ((m_windows.size() > windowIndex) && m_windows[windowIndex]->m_open)
 	{
-		SDL_RenderClear(m_windows[windowIndex].m_renderer);
-		SDL_RenderPresent(m_windows[windowIndex].m_renderer);
+		SDL_RenderPresent(m_windows[windowIndex]->m_renderer);
+		SDL_RenderClear(m_windows[windowIndex]->m_renderer);
 	}
 }
 

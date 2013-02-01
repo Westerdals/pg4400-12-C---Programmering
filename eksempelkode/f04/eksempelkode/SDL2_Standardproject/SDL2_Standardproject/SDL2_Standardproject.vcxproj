@@ -56,6 +56,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -84,6 +86,7 @@
   <ItemGroup>
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SDL\SDLError.cpp" />
     <ClCompile Include="SDL\SDLManager.cpp" />
@@ -91,12 +94,14 @@
   <ItemGroup>
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="SDL\SDLError.h" />
     <ClInclude Include="SDL\SDLManager.h" />
     <ClInclude Include="SDL\SDLWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\gfx\sdl2.bmp" />
+    <Image Include="Assets\gfx\sdl_bro.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -20,6 +20,7 @@ private:
 	GameManager& operator=(const GameManager&); // Hidden assign operator
 
 	SDLManager m_sdl;
+	unsigned int m_window;
 };
 
 #endif
