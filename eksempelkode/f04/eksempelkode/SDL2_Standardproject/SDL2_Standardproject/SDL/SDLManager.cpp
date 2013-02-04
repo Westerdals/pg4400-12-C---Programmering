@@ -3,6 +3,8 @@
 
 SDLManager::SDLManager(Uint32 flags)
 {
+	m_mainWindow = NULL;
+
 	if (SDL_Init(flags))
 	{
 		std::stringstream msg;
@@ -20,13 +22,15 @@ SDLManager::~SDLManager()
 int SDLManager::createWindow(const std::string& title,
 					const int& width, const int& height,
 					const int& x, const int& y,
-					const Uint32& flags)
+					const Uint32& flags,
+					const bool& mainWindow)
 {
 	// Create the window where we will draw.
 	SDL_Window* window = SDL_CreateWindow(
 		title.c_str(), x, y, width, height, flags
 	);
 	
+	// Check for errors
 	if (window == NULL)
 	{
 		std::stringstream msg;
@@ -63,9 +67,22 @@ int SDLManager::createWindow(const std::string& title,
 	int index = m_windows.size();
 	m_windows.push_back(std::unique_ptr<SDLWindow>(new SDLWindow(window, renderer, true)));//window);
 
-	renderWindow(index);
+	// Set main window if not already set or asked to
+	if (mainWindow || (m_mainWindow == NULL))
+	{
+		m_mainWindow = index;
+	}
 
+	renderWindow(index); // Render window immediately
 	return index;
+}
+
+void SDLManager::setMainWindow(const unsigned int& windowIndex)
+{
+	if ((m_windows.size() > windowIndex) && m_windows[windowIndex]->m_open)
+	{
+		m_mainWindow = windowIndex;
+	}
 }
 
 void SDLManager::addObject(const GameObject& obj, const unsigned int& windowIndex)
@@ -84,6 +101,11 @@ SDL_Renderer* const SDLManager::getRenderer(const unsigned int& windowIndex) con
 	}
 
 	return NULL;
+}
+
+const unsigned int* const SDLManager::getMainWindow() const
+{
+	return &m_mainWindow;
 }
 
 void SDLManager::closeWindow(const unsigned int& windowIndex)
