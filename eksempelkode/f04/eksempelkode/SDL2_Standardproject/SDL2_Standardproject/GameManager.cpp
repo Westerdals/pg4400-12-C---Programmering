@@ -46,7 +46,7 @@ void GameManager::play()
 		m_sdl.addObject(player, m_window);
 		m_sdl.renderWindow(m_window);
 
-		if (SDL_HasEvent(SDL_QUIT) || InputManager::Instance().KeyDown(SDL_SCANCODE_ESCAPE))
+		if (SDL_HasEvent(SDL_QUIT))
 		{
 			notGameOver = false;
 		}
