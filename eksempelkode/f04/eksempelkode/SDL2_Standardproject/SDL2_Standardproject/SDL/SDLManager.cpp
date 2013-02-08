@@ -1,10 +1,13 @@
 #include <sstream>
 #include "SDLManager.h"
 
-SDLManager::SDLManager(Uint32 flags)
+SDLManager::SDLManager()
 {
 	m_mainWindow = NULL;
+}
 
+void SDLManager::init(Uint32 flags)
+{
 	if (SDL_Init(flags))
 	{
 		std::stringstream msg;
@@ -85,14 +88,6 @@ void SDLManager::setMainWindow(const unsigned int& windowIndex)
 	}
 }
 
-void SDLManager::addObject(const GameObject& obj, const unsigned int& windowIndex)
-{
-	if ((m_windows.size() > windowIndex) && m_windows[windowIndex]->m_open)
-	{
-		SDL_RenderCopy(m_windows[windowIndex]->m_renderer, obj.getDrawable(), NULL, &obj.m_coords);
-	}
-}
-
 SDL_Renderer* const SDLManager::getRenderer(const unsigned int& windowIndex) const
 {
 	if (m_windows.size() > windowIndex)
@@ -123,7 +118,6 @@ void SDLManager::renderWindow(const unsigned int& windowIndex)
 	if ((m_windows.size() > windowIndex) && m_windows[windowIndex]->m_open)
 	{
 		SDL_RenderPresent(m_windows[windowIndex]->m_renderer);
-		SDL_RenderClear(m_windows[windowIndex]->m_renderer);
 	}
 }
 

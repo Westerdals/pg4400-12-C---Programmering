@@ -31,7 +31,19 @@ void InputManager::Update()
 	m_oldMouseButtons = m_mouseButtons;
 	memcpy(m_oldKeys.get(), m_keys, m_keyCount * sizeof(Uint8));
 
+	// SDL_PollEvent() performs a SDL_PumpEvent():
 	// Pumping events, meaning we update SDL's input states to match current inputs.
-	SDL_PumpEvents();  // Key changes gets updated automatically, as we hold a pointer to SDL's internal key array.
-	m_mouseButtons = SDL_GetRelativeMouseState(&m_mouseX, &m_mouseY);  // Mouse updates we must fetch manually.
+	// Key changes gets updated automatically, as we hold a pointer to SDL's internal key array.
+	SDL_Event event;
+	if (SDL_PollEvent(&event))
+	{
+		// Check if user X-ed out a window
+		if (event.type == SDL_QUIT)
+		{
+			m_exit = true;
+		}
+	}
+
+	// We have to fetch Mouse Events manually
+	m_mouseButtons = SDL_GetRelativeMouseState(&m_mouseX, &m_mouseY);
 }

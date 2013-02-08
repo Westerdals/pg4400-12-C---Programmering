@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E774DA67-0A3B-4311-8D82-33BC129179F1}</ProjectGuid>
+    <ProjectGuid>{DDE9D35E-D0B4-4F78-B3F9-EE896F449F53}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SDL2_Standardproject</RootNamespace>
+    <RootNamespace>cpp_gametimer</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,13 +41,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(PG4400_SDL2_PATH)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(PG4400_SDL2_PATH)\lib\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(PG4400_SDL2_PATH)\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(PG4400_SDL2_PATH)\lib\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -56,13 +52,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,31 +73,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SDL\SDLBmp.cpp" />
-    <ClCompile Include="SDL\SDLError.cpp" />
-    <ClCompile Include="SDL\SDLManager.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="SDL\SDLBmp.h" />
-    <ClInclude Include="SDL\SDLError.h" />
-    <ClInclude Include="SDL\SDLManager.h" />
-    <ClInclude Include="SDL\SDLMath.h" />
-    <ClInclude Include="SDL\SDLWindow.h" />
     <ClInclude Include="Timer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Assets\gfx\sdl2.bmp" />
-    <Image Include="Assets\gfx\sdl_bro.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

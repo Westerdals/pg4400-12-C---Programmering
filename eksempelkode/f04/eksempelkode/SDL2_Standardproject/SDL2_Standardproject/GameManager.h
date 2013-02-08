@@ -18,8 +18,7 @@ private:
 	GameManager();								// Hidden constructor
 	GameManager(const GameManager&);			// Hidden copy constructor
 	GameManager& operator=(const GameManager&); // Hidden assign operator
-
-	SDLManager m_sdl;
+	
 	unsigned int m_window;
 };
 

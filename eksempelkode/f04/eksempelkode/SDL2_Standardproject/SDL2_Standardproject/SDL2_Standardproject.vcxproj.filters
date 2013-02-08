@@ -37,11 +37,14 @@
     <ClCompile Include="GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\SDLBmp.cpp">
+      <Filter>Source Files\SDL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,11 +60,17 @@
     <ClInclude Include="SDL\SDLWindow.h">
       <Filter>Header Files\SDL</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLBmp.h">
+      <Filter>Header Files\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\SDLMath.h">
+      <Filter>Header Files\SDL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,13 +6,19 @@
 #include <SDL.h>
 #include "SDLError.h"
 #include "SDLWindow.h"
-#include "../GameObject.h"
 
 class SDLManager
 {
 public:
-	SDLManager(Uint32 flags = SDL_INIT_VIDEO);
 	~SDLManager();
+
+	static SDLManager& Instance()
+	{
+		static SDLManager sdl;
+		return sdl;
+	}
+
+	void init(Uint32 flags = SDL_INIT_VIDEO);
 
 	int createWindow(
 		const std::string& title,
@@ -24,16 +30,19 @@ public:
 		const bool& mainWindow = false
 	);
 
-	SDL_Renderer* const getRenderer(const unsigned int& windowIndex) const;
+	SDL_Renderer* const getRenderer(const unsigned int& windowIndex = NULL) const;
 	const unsigned int* const getMainWindow() const;
 
 	void setMainWindow(const unsigned int& windowIndex);
-	void addObject(const GameObject& obj, const unsigned int& windowIndex);
 
 	void closeWindow(const unsigned int& windowIndex);
 	void renderWindow(const unsigned int& windowIndex);
 	void render();
 private:
+	SDLManager();
+	SDLManager(const SDLManager&);
+	SDLManager& operator=(const SDLManager&);
+
 	std::vector<std::unique_ptr<SDLWindow>> m_windows;
 	unsigned int m_mainWindow;
 };

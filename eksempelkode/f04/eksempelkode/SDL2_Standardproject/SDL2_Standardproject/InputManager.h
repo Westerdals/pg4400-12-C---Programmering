@@ -15,6 +15,8 @@ public:
 
 	void Update();
 
+	inline bool hasExit() const { return m_exit; };
+
 	// Keyboard functions.
 	bool KeyDown(int keyIndex) const		 { return (CurKeyDown(keyIndex)) && (!OldKeyDown(keyIndex)); }
 	bool KeyStillDown(int keyIndex) const { return (CurKeyDown(keyIndex)) && ( OldKeyDown(keyIndex)); }
@@ -41,6 +43,7 @@ protected:
 	int m_mouseY; // Mouse pos y.
 	Uint8 m_mouseButtons; // Mouse buttons clicked
 	Uint8 m_oldMouseButtons; // Mouse buttons clicked last update
+	bool m_exit; // If the user has closed the window or not (X)
 private:
 	InputManager(); // Hidden constructor
 	InputManager(const InputManager&); // Hidden copy constructor

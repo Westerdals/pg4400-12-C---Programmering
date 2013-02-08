@@ -1,54 +1,59 @@
+#include "SDL/SDLBmp.h"
 #include "GameManager.h"
-#include "GameObject.h"
 #include "InputManager.h"
+#include "Timer.h"
 
 GameManager::GameManager()
 {
-	m_window = m_sdl.createWindow("My Awesome SDL 2.0 Game");
+	SDLManager::Instance().init();
+	m_window = SDLManager::Instance().createWindow("My Awesome SDL 2.0 Game");
+	Timer::Instance().init();
 }
 
 void GameManager::play()
 {
 	bool notGameOver = true;
-	GameObject background("sdl2.bmp", m_sdl.getRenderer(m_window));
-	GameObject player("sdl_bro.bmp", m_sdl.getRenderer(m_window));
+	SDLBmp backround("Assets/gfx/sdl2.bmp");
+	SDLBmp player("Assets/gfx/sdl_bro.bmp");
 
 	while (notGameOver)
 	{
 		InputManager::Instance().Update();
+		Timer::Instance().update();
 
-		if (InputManager::Instance().KeyDown(SDL_SCANCODE_ESCAPE))
-		{
-			notGameOver = false;
-		}
+		float displacement = 150.F * Timer::Instance().deltaTime();
 
-		if (InputManager::Instance().KeyDown(SDL_SCANCODE_LEFT))
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_LEFT) ||
+			InputManager::Instance().KeyStillDown(SDL_SCANCODE_LEFT))
 		{
-			player.m_coords.x -= 5;
+			player.x -= displacement;
 		}
 		
-		if (InputManager::Instance().KeyDown(SDL_SCANCODE_RIGHT))
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_RIGHT) ||
+			InputManager::Instance().KeyStillDown(SDL_SCANCODE_RIGHT))
 		{
-			player.m_coords.x += 5;
+			player.x += displacement;
 		}
 
-		if (InputManager::Instance().KeyDown(SDL_SCANCODE_UP))
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_UP) ||
+			InputManager::Instance().KeyStillDown(SDL_SCANCODE_UP))
 		{
-			player.m_coords.y -= 5;
+			player.y -= displacement;
 		}
 
-		if (InputManager::Instance().KeyDown(SDL_SCANCODE_DOWN))
+		if (InputManager::Instance().KeyDown(SDL_SCANCODE_DOWN) ||
+			InputManager::Instance().KeyStillDown(SDL_SCANCODE_DOWN))
 		{
-			player.m_coords.y += 5;
+			player.y += displacement;
 		}
 
-		m_sdl.addObject(background, m_window);
-		m_sdl.addObject(player, m_window);
-		m_sdl.renderWindow(m_window);
-
-		if (SDL_HasEvent(SDL_QUIT))
+		if (InputManager::Instance().hasExit() || InputManager::Instance().KeyDown(SDL_SCANCODE_ESCAPE))
 		{
 			notGameOver = false;
 		}
+
+		backround.draw();
+		player.draw();
+		SDLManager::Instance().renderWindow(m_window);
 	}
 }
