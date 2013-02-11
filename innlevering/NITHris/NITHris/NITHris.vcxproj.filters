@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\gfx">
+      <UniqueIdentifier>{e05ead3b-3034-4aca-b238-57c9c4cea0f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SDL">
+      <UniqueIdentifier>{5db804e1-a45f-4c50-9504-7c2eac37a41a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDL">
+      <UniqueIdentifier>{cafaf2d3-4119-4ee0-a694-7396709c9bfa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\gfx\gameover.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="Assets\gfx\numbers_32x32.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="Assets\gfx\pause.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="Assets\gfx\scoreboard_back.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="Assets\gfx\startup.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+    <Image Include="Assets\gfx\tiles_32x32.bmp">
+      <Filter>Resource Files\gfx</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\loopTimerSDL.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\outputManagerNITHris.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL\InputManagerSDL.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="nithris.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\loopTimerSDL.h">
+      <Filter>Header Files\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\outputManagerNITHris.h">
+      <Filter>Header Files\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL\InputManagerSDL.h">
+      <Filter>Header Files\SDL</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
