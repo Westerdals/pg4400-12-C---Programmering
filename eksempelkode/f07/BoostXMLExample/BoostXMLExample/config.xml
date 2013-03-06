@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A XML file representing a program's settings. -->
+<!-- Make sure the encoding value equals to the actual file's encoding! utf-8 = VS12 standard -->
+<app>
+  <name>Test Application</name>
+  
+  <!-- Graphics related data -->
+  <gfx>
+    <resolution>
+      <height>800</height>
+      <width>600</width>
+    </resolution>
+  </gfx>
+  
+  <!-- In-game sprites, should ideally be in a resources.xml or similar -->
+  <sprites>
+    <sprite>
+      <filename>spiller.png</filename>
+    </sprite>
+    <sprite>
+      <filename>monster.png</filename>
+    </sprite>
+  </sprites>
+</app>
