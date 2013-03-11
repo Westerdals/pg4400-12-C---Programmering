@@ -1,0 +1,249 @@
+07.03.2013 10:44:40:892 | WARN | Working!
+07.03.2013 10:44:40:892 | INFO | But it's a potential trap.
+07.03.2013 10:44:41:423 | CRITICAL | Abandon the ship!
+07.03.2013 10:44:41:423 | ERROR | Everything went much worse than expected ...
+07.03.2013 10:44:41:438 | WARN | The memory address is: #00c3eb78.
+07.03.2013 10:44:41:454 | INFO | Thousand iterations have passed by!
+07.03.2013 10:44:41:469 | INFO | Thousand iterations have passed by!
+07.03.2013 10:44:41:485 | INFO | Thousand iterations have passed by!
+07.03.2013 10:44:41:485 | INFO | Thousand iterations have passed by!
+07.03.2013 10:47:46:860 | WARN | Working!
+07.03.2013 10:47:46:860 | INFO | But it's a potential trap.
+07.03.2013 10:47:47:390 | CRITICAL | Abandon the ship!
+07.03.2013 10:47:47:390 | ERROR | Everything went much worse than expected ...
+07.03.2013 10:47:47:390 | WARN | The memory address is: #011beb88.
+07.03.2013 10:47:47:390 | INFO | Thousand iterations have passed by!
+07.03.2013 10:47:47:406 | INFO | Thousand iterations have passed by!
+07.03.2013 10:47:47:406 | INFO | Thousand iterations have passed by!
+07.03.2013 10:47:47:421 | INFO | Thousand iterations have passed by!
+07.03.2013 10:48:07:171 | WARN | Working!
+07.03.2013 10:48:07:171 | INFO | But it's a potential trap.
+07.03.2013 10:48:07:686 | CRITICAL | Abandon the ship!
+07.03.2013 10:48:07:686 | ERROR | Everything went much worse than expected ...
+07.03.2013 10:48:07:686 | WARN | The memory address is: #011beb88.
+07.03.2013 10:48:07:686 | INFO | Thousand iterations have passed by!
+07.03.2013 10:48:07:686 | INFO | Thousand iterations have passed by!
+07.03.2013 10:48:07:686 | INFO | Thousand iterations have passed by!
+07.03.2013 10:48:07:686 | INFO | Thousand iterations have passed by!
+07.03.2013 10:49:35:814 | WARN | Working!
+07.03.2013 10:49:35:814 | INFO | But it's a potential trap.
+07.03.2013 10:49:36:344 | CRITICAL | Abandon the ship!
+07.03.2013 10:49:36:344 | ERROR | Everything went much worse than expected ...
+07.03.2013 10:49:36:360 | WARN | The memory address is: #0128eb88.
+07.03.2013 10:49:36:391 | INFO | Thousand iterations have passed by!
+07.03.2013 10:49:36:407 | INFO | Thousand iterations have passed by!
+07.03.2013 10:49:36:438 | INFO | Thousand iterations have passed by!
+07.03.2013 10:49:36:453 | INFO | Thousand iterations have passed by!
+07.03.2013 10:50:01:586 | CRITICAL | Abandon the ship!
+07.03.2013 11:09:01:589 | WARN | Working!
+07.03.2013 11:09:01:604 | INFO | But it's a potential trap.
+07.03.2013 11:09:02:135 | CRITICAL | Abandon the ship!
+07.03.2013 11:09:02:135 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:09:02:150 | WARN | The memory address is: #00a2eb90.
+07.03.2013 11:09:02:166 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:02:197 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:02:213 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:02:244 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:24:692 | WARN | Working!
+07.03.2013 11:09:24:708 | INFO | But it's a potential trap.
+07.03.2013 11:09:25:238 | CRITICAL | Abandon the ship!
+07.03.2013 11:09:25:254 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:09:25:285 | WARN | The memory address is: #00f6eb90.
+07.03.2013 11:09:25:316 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:25:348 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:25:363 | INFO | Thousand iterations have passed by!
+07.03.2013 11:09:25:394 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:14:456 | WARN | Working!
+07.03.2013 11:14:14:456 | INFO | But it's a potential trap.
+07.03.2013 11:14:14:986 | CRITICAL | Abandon the ship!
+07.03.2013 11:14:14:986 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:14:15:2 | WARN | The memory address is: #00daeb90.
+07.03.2013 11:14:15:2 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:15:2 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:15:2 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:15:17 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:52:672 | WARN | Working!
+07.03.2013 11:14:52:672 | INFO | But it's a potential trap.
+07.03.2013 11:14:53:186 | CRITICAL | Abandon the ship!
+07.03.2013 11:14:53:202 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:14:53:233 | WARN | The memory address is: #0019eb90.
+07.03.2013 11:14:53:264 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:53:280 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:53:296 | INFO | Thousand iterations have passed by!
+07.03.2013 11:14:53:327 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:22:830 | WARN | Working!
+07.03.2013 11:16:22:830 | INFO | But it's a potential trap.
+07.03.2013 11:16:23:344 | CRITICAL | Abandon the ship!
+07.03.2013 11:16:23:360 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:16:23:391 | WARN | The memory address is: #0103b980.
+07.03.2013 11:16:23:422 | WARN | Hei på deg
+07.03.2013 11:16:23:422 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:23:454 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:23:469 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:23:485 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:50:67 | WARN | Working!
+07.03.2013 11:16:50:83 | INFO | But it's a potential trap.
+07.03.2013 11:16:50:613 | CRITICAL | Abandon the ship!
+07.03.2013 11:16:50:629 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:16:50:660 | WARN | The memory address is: #00e8c47c.
+07.03.2013 11:16:50:691 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:50:707 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:50:738 | INFO | Thousand iterations have passed by!
+07.03.2013 11:16:50:769 | INFO | Thousand iterations have passed by!
+07.03.2013 11:23:56:7 | WARN | Working!
+07.03.2013 11:23:56:7 | INFO | But it's a potential trap.
+07.03.2013 11:23:56:537 | CRITICAL | Abandon the ship!
+07.03.2013 11:23:56:553 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:23:56:584 | WARN | The memory address is: #009bc47c.
+07.03.2013 11:23:56:615 | INFO | Thousand iterations have passed by!
+07.03.2013 11:23:56:631 | INFO | Thousand iterations have passed by!
+07.03.2013 11:23:56:662 | INFO | Thousand iterations have passed by!
+07.03.2013 11:23:56:693 | INFO | Thousand iterations have passed by!
+07.03.2013 11:24:33:440 | WARN | Working!
+07.03.2013 11:24:33:440 | INFO | But it's a potential trap.
+07.03.2013 11:24:33:971 | CRITICAL | Abandon the ship!
+07.03.2013 11:24:33:986 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:24:34:18 | WARN | The memory address is: #00c0c47c.
+07.03.2013 11:24:34:33 | INFO | Thousand iterations have passed by!
+07.03.2013 11:24:34:64 | INFO | Thousand iterations have passed by!
+07.03.2013 11:24:34:96 | INFO | Thousand iterations have passed by!
+07.03.2013 11:24:34:127 | INFO | Thousand iterations have passed by!
+07.03.2013 11:25:11:781 | WARN | Working!
+07.03.2013 11:25:11:781 | INFO | But it's a potential trap.
+07.03.2013 11:25:12:312 | CRITICAL | Abandon the ship!
+07.03.2013 11:25:12:312 | ERROR | Everything went much worse than expected ...
+07.03.2013 11:25:12:327 | WARN | The memory address is: #00c3c47c.
+07.03.2013 11:25:12:327 | INFO | Thousand iterations have passed by!
+07.03.2013 11:25:12:343 | INFO | Thousand iterations have passed by!
+07.03.2013 11:25:12:359 | INFO | Thousand iterations have passed by!
+07.03.2013 11:25:12:374 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:12:820 | WARN | Working!
+08.03.2013 15:12:12:835 | INFO | But it's a potential trap.
+08.03.2013 15:12:13:350 | CRITICAL | Abandon the ship!
+08.03.2013 15:12:13:350 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:12:13:366 | WARN | The memory address is: #0135fb98.
+08.03.2013 15:12:13:381 | WARN | Hei på deg
+08.03.2013 15:12:13:397 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:13:413 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:13:413 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:13:428 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:40:447 | WARN | Working!
+08.03.2013 15:12:40:447 | INFO | But it's a potential trap.
+08.03.2013 15:12:40:977 | CRITICAL | Abandon the ship!
+08.03.2013 15:12:40:977 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:12:40:993 | WARN | The memory address is: #012bfb98.
+08.03.2013 15:12:40:993 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:40:993 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:41:8 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:41:24 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:53:832 | WARN | Working!
+08.03.2013 15:12:53:847 | INFO | But it's a potential trap.
+08.03.2013 15:12:54:378 | CRITICAL | Abandon the ship!
+08.03.2013 15:12:54:393 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:12:54:424 | WARN | The memory address is: #0131fb98.
+08.03.2013 15:12:54:456 | WARN | Hei på deg
+08.03.2013 15:12:54:471 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:54:502 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:54:518 | INFO | Thousand iterations have passed by!
+08.03.2013 15:12:54:549 | INFO | Thousand iterations have passed by!
+08.03.2013 15:14:35:216 | WARN | Working!
+08.03.2013 15:14:35:216 | INFO | But it's a potential trap.
+08.03.2013 15:14:35:747 | CRITICAL | Abandon the ship!
+08.03.2013 15:14:35:747 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:14:35:762 | WARN | The memory address is: #0116fb98.
+08.03.2013 15:14:35:778 | INFO | Thousand iterations have passed by!
+08.03.2013 15:14:35:794 | INFO | Thousand iterations have passed by!
+08.03.2013 15:14:35:794 | INFO | Thousand iterations have passed by!
+08.03.2013 15:14:35:809 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:07:892 | WARN | Working!
+08.03.2013 15:15:07:892 | INFO | But it's a potential trap.
+08.03.2013 15:15:08:422 | CRITICAL | Abandon the ship!
+08.03.2013 15:15:08:422 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:15:08:438 | WARN | The memory address is: #00e3caf0.
+08.03.2013 15:15:08:453 | WARN | Hei på deg
+
+08.03.2013 15:15:08:469 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:08:485 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:08:485 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:08:500 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:56:539 | WARN | Working!
+08.03.2013 15:15:56:539 | INFO | But it's a potential trap.
+08.03.2013 15:15:57:69 | CRITICAL | Abandon the ship!
+08.03.2013 15:15:57:69 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:15:57:85 | WARN | The memory address is: #0136d47c.
+08.03.2013 15:15:57:101 | WARN | 
+08.03.2013 15:15:57:101 | WARN | 
+08.03.2013 15:15:57:116 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:57:132 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:57:147 | INFO | Thousand iterations have passed by!
+08.03.2013 15:15:57:163 | INFO | Thousand iterations have passed by!
+08.03.2013 15:16:33:155 | WARN | Working!
+08.03.2013 15:16:33:171 | INFO | But it's a potential trap.
+08.03.2013 15:16:33:701 | CRITICAL | Abandon the ship!
+08.03.2013 15:16:33:717 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:16:33:748 | WARN | The memory address is: #0013d47c.
+08.03.2013 15:16:33:779 | WARN | 
+08.03.2013 15:16:33:795 | INFO | Thousand iterations have passed by!
+08.03.2013 15:16:33:826 | INFO | Thousand iterations have passed by!
+08.03.2013 15:16:33:857 | INFO | Thousand iterations have passed by!
+08.03.2013 15:16:33:873 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:19:988 | WARN | Working!
+08.03.2013 15:18:19:988 | INFO | But it's a potential trap.
+08.03.2013 15:18:20:503 | CRITICAL | Abandon the ship!
+08.03.2013 15:18:20:518 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:18:20:550 | WARN | The memory address is: #003fd47c.
+08.03.2013 15:18:20:581 | WARN | 
+08.03.2013 15:18:20:596 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:20:628 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:20:659 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:20:690 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:54:166 | WARN | Working!
+08.03.2013 15:18:54:166 | INFO | But it's a potential trap.
+08.03.2013 15:18:54:696 | CRITICAL | Abandon the ship!
+08.03.2013 15:18:54:712 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:18:54:743 | WARN | The memory address is: #0103d47c.
+08.03.2013 15:18:54:774 | WARN | 
+08.03.2013 15:18:54:790 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:54:806 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:54:837 | INFO | Thousand iterations have passed by!
+08.03.2013 15:18:54:852 | INFO | Thousand iterations have passed by!
+08.03.2013 15:19:24:165 | WARN | Working!
+08.03.2013 15:19:24:165 | INFO | But it's a potential trap.
+08.03.2013 15:19:24:695 | CRITICAL | Abandon the ship!
+08.03.2013 15:19:24:711 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:19:24:742 | WARN | The memory address is: #0098d47c.
+08.03.2013 15:19:24:773 | WARN | 
+08.03.2013 15:19:24:773 | INFO | Thousand iterations have passed by!
+08.03.2013 15:19:24:804 | INFO | Thousand iterations have passed by!
+08.03.2013 15:19:24:835 | INFO | Thousand iterations have passed by!
+08.03.2013 15:19:24:867 | INFO | Thousand iterations have passed by!
+08.03.2013 15:20:03:741 | WARN | Working!
+08.03.2013 15:20:03:741 | INFO | But it's a potential trap.
+08.03.2013 15:20:04:257 | CRITICAL | Abandon the ship!
+08.03.2013 15:20:04:279 | ERROR | Everything went much worse than expected ...
+08.03.2013 15:20:04:310 | WARN | The memory address is: #0025fb90.
+08.03.2013 15:20:04:364 | WARN | Hei på deg
+08.03.2013 15:20:04:380 | INFO | Thousand iterations have passed by!
+08.03.2013 15:20:04:411 | INFO | Thousand iterations have passed by!
+08.03.2013 15:20:04:442 | INFO | Thousand iterations have passed by!
+08.03.2013 15:20:04:473 | INFO | Thousand iterations have passed by!
+11.03.2013 16:08:46:188 | WARN | Working!
+11.03.2013 16:08:46:188 | INFO | But it's a potential trap.
+11.03.2013 16:08:46:719 | CRITICAL | Abandon the ship!
+11.03.2013 16:08:46:734 | ERROR | Everything went much worse than expected ...
+11.03.2013 16:08:46:765 | WARN | The memory address is: #0116fc58.
+11.03.2013 16:08:46:797 | WARN | Hei på deg
+11.03.2013 16:08:46:812 | INFO | Thousand iterations have passed by!
+11.03.2013 16:08:46:828 | INFO | Thousand iterations have passed by!
+11.03.2013 16:08:46:843 | INFO | Thousand iterations have passed by!
+11.03.2013 16:08:46:859 | INFO | Thousand iterations have passed by!
+11.03.2013 16:09:07:882 | WARN | Working!
+11.03.2013 16:09:07:882 | INFO | But it's a potential trap.
+11.03.2013 16:09:08:397 | CRITICAL | Abandon the ship!
+11.03.2013 16:09:08:397 | ERROR | Everything went much worse than expected ...
+11.03.2013 16:09:08:397 | WARN | The memory address is: #0116fc58.
+11.03.2013 16:09:08:397 | WARN | Hei på deg
+11.03.2013 16:09:08:397 | INFO | Thousand iterations have passed by!
+11.03.2013 16:09:08:397 | INFO | Thousand iterations have passed by!
+11.03.2013 16:09:08:397 | INFO | Thousand iterations have passed by!
+11.03.2013 16:09:08:397 | INFO | Thousand iterations have passed by!
